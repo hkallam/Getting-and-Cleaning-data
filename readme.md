@@ -15,6 +15,8 @@
 * by using the dplyr,tidyr and stringr packages the raw dataset is transformed into the tidy data set  tidy_data.
 * And also created a second tidy data set with the average of each variable for each activity and each subject.
        final is the second tidy data set.
+
 **Codebook**
-*describes the variables and transformations made to get the these tidy data sets.
+
+* describes the variables and transformations made to get the these tidy data sets.
     
