@@ -49,13 +49,15 @@ df1$reading_statistics <- split_variable[,2]
 df1$reading_coordinates <- split_variable[,3]
 df1$reading_domain <- substr(df1$agg1,1,1) ## substr  splits from starting letter to ending letter.here we started from 1 and end at 1
 df1$reading_type <- substr(df1$agg1,2,length(df1$agg1)) ## here we splitted the BodyAcc statrting from 2 ending with that length
+df1$reading_coordinates[df1$reading_coordinates==""]<-"NA" ## replaced the blank spaces with NA
 ##table(df1$reading_type)
-
-attach(df1)  
+df1$reading_statistics<-gsub('[()]','',df1$reading_statistics)
+tidy_data<-df1[,c("activityLabel","subject", "reading_type","reading_statistics",  "reading_coordinates", "reading_domain" , "measurement")]
+attach(tidy_data)  
 ## calucating the mean for each subject and for each activity using aggregate
-test_final <- aggregate(df1[,"measurement"], 
-                        by=list(activityLabel,subject,reading_statistics, reading_coordinates, reading_domain, reading_type),
+final <- aggregate(tidy_data[,"measurement"], 
+                        by=list(activityLabel,subject,reading_type, reading_statistics, reading_coordinates, reading_domain),
                         FUN=mean, na.rm = TRUE)
-colnames(test_final)<-c("activity","subject","statistics","co-ordinates","domain","type","measurement")
-test_final$statistics<- gsub('[()]','',test_final$statistics)
-write.table(test_final,row.names=FALSE)
+colnames(final)<-c("activity","subject","type","statistics","co-ordinates","domain","measurement")
+
+write.table(final,row.names=FALSE)
