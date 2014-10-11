@@ -10,7 +10,8 @@
 7. This is the final tidy dataset.
 8. Aggregated the final tidy dataset to calculate the mean of the measurements for each member-activity.
 
-###Columns in tidy dataset
+###Columns in final aggregated tidy dataset
+The following list indicates the columns in the tidy dataset, followed by the possible values that each column contains.
 **activity**
 
 * LAYING
@@ -21,41 +22,41 @@
 * WALKING_UPSTAIRS
 
 **subject**
-
+range is from 1 to 30 integers.
 The ids of 30 members. ranging from 1 to 30.
 
 **type**
 
-* BodyAcc
-* BodyAccJerk
-* BodyAccJerkMag
-* BodyAccMag
-* BodyBodyAccJerkMag
-* BodyBodyGyroJerkMag
-* BodyBodyGyroMag
-* BodyGyro
-* BodyGyroJerk
-* BodyGyroJerkMag
-* BodyGyroMag
-* GravityAcc
-* GravityAccMag
+* BodyAcc - represented in standard gravity units 'g'
+* BodyAccJerk - represented in standard gravity units 'g'
+* BodyAccJerkMag - represented in standard gravity units 'g'
+* BodyAccMag  - represented in standard gravity units 'g'
+* BodyBodyAccJerkMag  - represented in standard gravity units 'g'
+* BodyBodyGyroJerkMag - represented in radians/second
+* BodyBodyGyroMag- represented in radians/second
+* BodyGyro- represented in radians/second
+* BodyGyroJerk- represented in radians/second
+* BodyGyroJerkMag- represented in radians/second
+* BodyGyroMag- represented in radians/second
+* GravityAcc - represented in standard gravity units 'g'
+* GravityAccMag - represented in standard gravity units 'g'
 
 **statistics**
 
-* mean
-* std
+* mean - mean statistic of the different measurement types
+* std - standard deviaiton statistic of the different measurement types
 
 **co-ordinates**
 
-* NA, not applicable
-* X
-* Y   
-* Z 
+* NA, not applicable (axis is not applicable)
+* X - represents X axis
+* Y - represents Y axis
+* Z - represents Z axis
 
 **domain**     
 
-* f - frequency domain
-* t - time domain
+* f - measurement represents frequency domain
+* t - measurement reprsents time domain
 
 **measurement**
 
